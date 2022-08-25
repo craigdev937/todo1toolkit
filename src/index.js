@@ -2,11 +2,16 @@ import "dotenv/config";
 import express from "express";
 import helmet from "helmet";
 import logger from "morgan";
+import mongoose from "mongoose";
 import { MidError } from "./middleware/ErrorMid.js";
 import { UserRt } from "./routes/UserRt.js";
 import { TodoRt } from "./routes/TodoRt.js";
 
 (async () => {
+    await mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB is now Connected!"))
+    .catch((error) => console.log(error));
+    
     const app = express();
     app.use(helmet());
 
