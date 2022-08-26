@@ -7,7 +7,8 @@ export const userVal = Joi.object({
 });
 
 export const todoVal = Joi.object({
-    text: Joi.string().required()
+    title: Joi.string().required(),
+    description: Joi.string().required()
 });
 
 

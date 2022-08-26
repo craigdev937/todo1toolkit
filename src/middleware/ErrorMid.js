@@ -6,8 +6,7 @@ class MidErrorClass {
     };
 
     errorHandler = (error, req, res) => {
-        const statusCode = req.statusCode === 200 ?
-            500 : res.statusCode;
+        const statusCode = req.statusCode === 200 ? 500 : res.statusCode;
         res.status(statusCode);
         res.json({
             message: error.message,

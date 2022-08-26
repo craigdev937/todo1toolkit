@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
 const TodoSchema = mongoose.Schema({
-    text: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
     date: { type: Date, default: Date.now }
 });
 

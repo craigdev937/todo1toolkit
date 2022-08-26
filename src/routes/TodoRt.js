@@ -1,7 +1,10 @@
 import express from "express";
-import { TodoIndex } from "../controllers/TodoCon.js";
+import { TODO } from "../controllers/TodoCon.js";
 
 export const TodoRt = express.Router();
-    TodoRt.get("/", TodoIndex);
+    TodoRt.post("/", TODO.Create);
+    TodoRt.get("/", TODO.FetchAll);
+    TodoRt.put("/:id", TODO.Update);
+    TodoRt.delete("/:id", TODO.Delete);
 
 
