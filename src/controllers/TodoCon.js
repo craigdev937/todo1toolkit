@@ -30,6 +30,16 @@ class TodoClass {
         }
     };
 
+    GetOne = async (req, res, next) => {
+        try {
+            await TodoModel.findById(req.params.id)
+            .then((todo) => res.status(200).json(todo));
+        } catch (error) {
+            res.status(500).json({msg: error.message});
+            next(error);
+        }
+    };
+
     Update = async (req, res, next) => {
         try {
             const { error } = todoVal.validate(req.body);
