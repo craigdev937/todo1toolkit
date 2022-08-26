@@ -3,7 +3,7 @@ import express from "express";
 import helmet from "helmet";
 import logger from "morgan";
 import mongoose from "mongoose";
-// import { MidError } from "./middleware/ErrorMid.js";
+import { MidError } from "./middleware/ErrorMid.js";
 import { UserRt } from "./routes/UserRt.js";
 import { TodoRt } from "./routes/TodoRt.js";
 
@@ -38,9 +38,9 @@ import { TodoRt } from "./routes/TodoRt.js";
     app.use("/api/todos", TodoRt);
 
     // Error Handling
-    // app.use(MidError.errorHandler);
-    // app.use(MidError.notFound);
-    const port = process.env.PORT;
+    app.use(MidError.errorHandler);
+    app.use(MidError.notFound);
+    const port = process.env.PORT || 9000;
     app.listen(port, () => {
         console.log(`Server: http://localhost:${port}`);
         console.log("Press Ctrl + C to exit.");

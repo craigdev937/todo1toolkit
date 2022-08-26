@@ -32,6 +32,9 @@ class TodoClass {
 
     Update = async (req, res, next) => {
         try {
+            const { error } = todoVal.validate(req.body);
+            if (error) return res.status(400)
+                .send(error.details[0].message);
             const { id } = req.params;
             const { title, description } = req.body;
             await TodoModel.findByIdAndUpdate(id, {
