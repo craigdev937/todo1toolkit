@@ -10,7 +10,7 @@ export const Main = () => (
         <React.Fragment>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />                
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Registration />} />
             </Routes>

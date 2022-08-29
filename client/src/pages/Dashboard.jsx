@@ -4,7 +4,7 @@ export const Dashboard = () => {
     return (
         <React.Fragment>
             <h1>Dashboard</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis soluta ratione illo harum placeat dolores deleniti aspernatur deserunt autem hic a impedit suscipit neque voluptate cupiditate perferendis est, esse voluptas.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione incidunt nesciunt veritatis adipisci, animi itaque sequi eaque quam molestias nulla laborum mollitia, cum necessitatibus nemo. Hic dolore cum voluptate mollitia.</p>
         </React.Fragment>
     );
 };
